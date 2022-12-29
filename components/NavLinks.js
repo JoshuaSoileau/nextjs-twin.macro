@@ -25,8 +25,8 @@ export default function NavLinks({ items, column }) {
                     tw`block p-6 py-4`,
                     tw`cursor-pointer`,
                     tw`text-16px font-500 font-700`,
-                    !isActive && tw`hover:bg-gray-200 text-zinc-500`,
-                    isActive && tw`bg-slate-900 text-white`,
+                    !isActive && tw`hover:bg-gray-200 text-blue-500`,
+                    isActive && tw`bg-indigo-900 text-white`,
                   ]}
                   href={url}
                 >

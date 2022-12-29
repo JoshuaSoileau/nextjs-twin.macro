@@ -15,6 +15,7 @@ export default function Rounded({
   xl8,
   xl9,
   border,
+  twProp,
 }) {
   const noSizeSpecified = !(
     !!md ||
@@ -46,6 +47,7 @@ export default function Rounded({
         xl8 && tw`rounded-8xl`,
         xl9 && tw`rounded-9xl`,
         border && tw`border-2 border-solid border-gray-200`,
+        twProp && twProp,
       ]}
     >
       {children}
