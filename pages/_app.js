@@ -1,10 +1,21 @@
-import GlobalStyles from "./../components/GlobalStyles";
+import { useEffect } from 'react'
+import TagManager from 'react-gtm-module'
+import LoadFonts from '../LoadFonts'
+import GlobalStyles from './../components/GlobalStyles'
 
-const App = ({ Component, pageProps }) => (
-  <div>
-    <GlobalStyles />
-    <Component {...pageProps} />
-  </div>
-);
+const App = ({ Component, pageProps }) => {
+  useEffect(() => {
+    /** TODO: Hide this behind an environment variable in netlify */
+    TagManager.initialize({ gtmId: 'GTM-PVKPRMR' })
+    LoadFonts()
+  }, [])
 
-export default App;
+  return (
+    <>
+      <GlobalStyles />
+      <Component {...pageProps} />
+    </>
+  )
+}
+
+export default App
